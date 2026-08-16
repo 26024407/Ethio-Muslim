@@ -535,19 +535,6 @@ previousPage();
 
 }
 
-},{passive:true});
-function openAudio(){
-
-  document.getElementById("home").style.display="none";
-  document.getElementById("quran").style.display="none";
-  document.getElementById("reader").style.display="none";
-  document.getElementById("audioPage").style.display="block";
-
-}
-
-function closeAudio(){
-const audio = new Audio();
-
 function playJuz(juz){
   audio.src =
     "https://server12.mp3quran.net/afs/"+juz+".mp3";
@@ -581,23 +568,19 @@ function openAudio(){
     list.appendChild(div);
   }
 }
+function playJuz(juz){
 
-  function playJuz(juz){
-
-  const audio = new Audio(
-    "https://server12.mp3quran.net/afs/" + juz + ".mp3"
-  );
+  const audio = document.createElement("audio");
 
   audio.controls = true;
-  audio.autoplay = true;
+  audio.src = "https://server12.mp3quran.net/afs/" + juz + ".mp3";
 
-  audio.play().catch(function(){
-    alert("🔊 Play ቁልፉን ንካ።");
-  });
+  document.getElementById("audioPage").appendChild(audio);
 
+  audio.play();
 
+  
 }
-
   
 </script>
   
