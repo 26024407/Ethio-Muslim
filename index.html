@@ -528,3 +528,49 @@ previousPage();
 
 </body>
 </html>
+<div class="card">
+<button onclick="openAudio()">
+<span class="icon">🎧</span>
+<div class="card-title">Qur'an Audio</div>
+<div class="card-sub">Mishary Alafasy</div>
+</button>
+</div>
+<div id="audioPage" style="display:none;padding:18px">
+
+<button class="back" onclick="closeAudio()">
+← Back
+</button>
+
+<h2>🎧 Qur'an Audio</h2>
+<p>Mishary Alafasy</p>
+
+<div id="audioJuzList"></div>
+
+</div>
+function openAudio(){
+
+  document.getElementById("home").style.display="none";
+  document.getElementById("audioPage").style.display="block";
+
+}
+
+function closeAudio(){
+
+  document.getElementById("audioPage").style.display="none";
+  document.getElementById("home").style.display="block";
+
+}
+
+const audioList=document.getElementById("audioJuzList");
+
+for(let i=1;i<=30;i++){
+
+  const div=document.createElement("div");
+
+  div.className="juz";
+
+  div.innerText="🎧 Juz "+i;
+
+  audioList.appendChild(div);
+
+}
