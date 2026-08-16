@@ -1,26 +1,17 @@
+
 <div class="card">
 <span class="icon">🎧</span>
 <div class="card-title">Qur'an Audio</div>
 <div class="card-sub">Listen</div>
-</div><div class="card">
-<button onclick="openAudio()">
-<span class="icon">🎧</span>
-<div class="card-title">Qur'an Audio</div>
-<div class="card-sub">Mishary Alafasy</div>
-</button>
-</div><div id="audioPage" style="display:none;padding:18px">
+</div>
+function playJuzAudio(juz){
 
-<button class="back" onclick="closeAudio()">
-← Back
-</button>
+  alert(
+    "🎧 Juz "+juz+
+    " — Mishary Alafasy"
+  );
 
-<h2>🎧 Qur'an Audio</h2>
-
-<p>Mishary Alafasy</p>
-
-<div id="audioJuzList"></div>
-
-</div>function openAudio(){
+}
 
   document.getElementById("home").style.display="none";
   document.getElementById("quran").style.display="none";
