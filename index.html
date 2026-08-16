@@ -41,3 +41,46 @@ for(let i=1;i<=30;i++){
 
 </body>
 </html>
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }catch(error){
+
+    content.innerHTML=
+      '<div class="error">'+
+      "❌ Qur'an መጫን አልተቻለም።<br><br>"+
+      "ኢንተርኔትህን አረጋግጥና እንደገና ሞክር።"+
+      "</div>";
+
+  }
+
+}
+
+
+const list=document.getElementById("juzList");
+
+for(let i=1;i<=30;i++){
+
+  const div=document.createElement("div");
+
+  div.className="juz";
+
+  div.innerHTML="📖 Juz "+i;
+
+  div.onclick=function(){
+
+    openJuz(i);
+
+  };
+
+  list.appendChild(div);
+
+}
+
+</script>
+
+</body>
+</html>
