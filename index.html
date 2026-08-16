@@ -563,11 +563,58 @@ function playJuz(juz){
 
   let number = String(juz).padStart(2,"0");
 
-  let audio = new Audio(
-    "https://archive.org/download/quran-juz-para-1-to-30-alafasy-audio-mp3-download/"
-    + number + ".mp3"
-  );
+ 
+let audio = new Audio();
 
+function openAudio(){
+
+  document.getElementById("home").style.display="none";
+  document.getElementById("quran").style.display="none";
+  document.getElementById("reader").style.display="none";
+  document.getElementById("audioPage").style.display="block";
+
+  const list = document.getElementById("audioJuzList");
+  list.innerHTML = "";
+
+  for(let i=1; i<=30; i++){
+
+    const div = document.createElement("div");
+
+    div.className = "juz";
+    div.innerHTML = "🎧 Juz " + i;
+
+    div.onclick = function(){
+      playJuz(i);
+    };
+
+    list.appendChild(div);
+  }
+}
+
+function playJuz(juz){
+
+  audio.pause();
+
+  audio.src =
+    "https://server12.mp3quran.net/afs/" + juz + ".mp3";
+
+  audio.controls = true;
+
+  audio.play().catch(function(){
+    alert("🔊 የስልኩን ድምፅ ከፍ አድርገህ Play ን ንካ።");
+  });
+
+}
+
+function closeAudio(){
+
+  audio.pause();
+  audio.currentTime = 0;
+
+  document.getElementById("audioPage").style.display="none";
+  document.getElementById("home").style.display="block";
+
+}
   audio.play().catch(function(){
     alert("🔊 Play ን ንካ።");
   });
