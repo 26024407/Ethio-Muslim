@@ -589,7 +589,7 @@ function openAudio(){
 
     div.onclick = function(){
       playJuz(i);
-    };
+    }
 
     list.appendChild(div);
   }
@@ -597,14 +597,13 @@ function openAudio(){
 
 function playJuz(juz){
 
-  const audio = new Audio(
-    "https://server12.mp3quran.net/afs/" + juz + ".mp3"
-  );
+  const player = document.getElementById("audioPlayer");
 
-  audio.play().catch(function(){
-    alert("🔊 ድምፅ ለማጫወት Play ን ንካ");
-  });
-
+  player.innerHTML =
+    '<p>🎧 Juz ' + juz + ' — Mishary Alafasy</p>' +
+    '<audio controls style="width:100%">' +
+    '<source src="https://server12.mp3quran.net/afs/' + juz + '.mp3" type="audio/mpeg">' +
+    '</audio>';
 }
 
 function closeAudio(){
