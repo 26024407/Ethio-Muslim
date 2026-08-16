@@ -546,7 +546,26 @@ function openAudio(){
 }
 
 function closeAudio(){
+const audio = new Audio();
 
+function playJuz(juz){
+  audio.src =
+    "https://server12.mp3quran.net/afs/"+juz+".mp3";
+
+  audio.play().catch(function(){
+    alert("🔊 ድምፁን ለማጫወት Play ን ንካ");
+  });
+}
+
+function closeAudio(){
+
+  audio.pause();
+  audio.currentTime = 0;
+
+  document.getElementById("audioPage").style.display="none";
+  document.getElementById("home").style.display="block";
+
+}
   document.getElementById("audioPage").style.display="none";
   document.getElementById("home").style.display="block";
 
