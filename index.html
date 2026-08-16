@@ -570,8 +570,52 @@ function closeAudio(){
   document.getElementById("home").style.display="block";
 
 }
-</script>
+function openAudio(){
 
+  document.getElementById("home").style.display="none";
+  document.getElementById("quran").style.display="none";
+  document.getElementById("reader").style.display="none";
+  document.getElementById("audioPage").style.display="block";
+
+  const list = document.getElementById("audioJuzList");
+  list.innerHTML = "";
+
+  for(let i=1; i<=30; i++){
+
+    const div = document.createElement("div");
+
+    div.className = "juz";
+    div.innerHTML = "🎧 Juz " + i;
+
+    div.onclick = function(){
+      playJuz(i);
+    };
+
+    list.appendChild(div);
+  }
+}
+
+function playJuz(juz){
+
+  const audio = new Audio(
+    "https://server12.mp3quran.net/afs/" + juz + ".mp3"
+  );
+
+  audio.play().catch(function(){
+    alert("🔊 ድምፅ ለማጫወት Play ን ንካ");
+  });
+
+}
+
+function closeAudio(){
+
+  document.getElementById("audioPage").style.display="none";
+  document.getElementById("home").style.display="block";
+
+}
+  
+</script>
+  
 </body>
 </html>
 
