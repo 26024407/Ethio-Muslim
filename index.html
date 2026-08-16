@@ -561,20 +561,18 @@ list.appendChild(div);
 
 function playJuz(juz){
 
-audio.src="https://server12.mp3quran.net/afs/"+juz+".mp3";
+  let number = String(juz).padStart(2,"0");
 
-audio.play().catch(function(){
+  let audio = new Audio(
+    "https://archive.org/download/quran-juz-para-1-to-30-alafasy-audio-mp3-download/"
+    + number + ".mp3"
+  );
 
-alert("🔊 Play ንካ።");
-
-});
+  audio.play().catch(function(){
+    alert("🔊 Play ን ንካ።");
+  });
 
 }
-
-function closeAudio(){
-
-audio.pause();
-
 document.getElementById("audioPage").style.display="none";
 document.getElementById("home").style.display="block";
 
