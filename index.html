@@ -234,9 +234,41 @@ Assalamu Alaikum 🤲
 Ethio Muslim © 2026
 </div>
 
+<div id="audioPage" style="display:none;padding:18px">
+
+<button class="back" onclick="closeAudio()">
+← Back
+</button>
+
+<h2>🎧 Qur'an Audio</h2>
+
+<p>Mishary Alafasy</p>
+
+<div id="audioJuzList">
+
+<div class="juz">
+🎧 Juz 1
 </div>
 
+<div class="juz">
+🎧 Juz 2
+</div>
 
+<div class="juz">
+🎧 Juz 3
+</div>
+
+<div class="juz">
+🎧 Juz 4
+</div>
+
+<div class="juz">
+🎧 Juz 5
+</div>
+
+</div>
+
+</div>
 <div id="quran">
 
 <button class="back" onclick="closeQuran()">
@@ -252,7 +284,7 @@ Ethio Muslim © 2026
 </div>
 
 
-<div id="reader">
+<div id="reader">  
 
 <button class="back" onclick="closeReader()">
 ← Back to Juz
@@ -523,9 +555,23 @@ previousPage();
 }
 
 },{passive:true});
+function openAudio(){
 
+  document.getElementById("home").style.display="none";
+  document.getElementById("quran").style.display="none";
+  document.getElementById("reader").style.display="none";
+  document.getElementById("audioPage").style.display="block";
+
+}
+
+function closeAudio(){
+
+  document.getElementById("audioPage").style.display="none";
+  document.getElementById("home").style.display="block";
+
+}
 </script>
 
 </body>
 </html>
-<
+
