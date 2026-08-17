@@ -222,7 +222,29 @@ document.getElementById("home").style.display="block";
 </header>
 
 <div id="home">
+div class="juz">
+<h3>🌅 Morning Dua</h3>
+<p dir="rtl">اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا</p>
+</div>
 
+<div class="juz">
+<h3>🌙 Before Sleeping</h3>
+<p dir="rtl">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</p>
+</div>
+
+<div class="juz">
+<h3>🍽️ Before Eating</h3>
+<p dir="rtl">بِسْمِ اللَّهِ</p>
+</div>
+
+<div class="juz">
+<h3>🤲 Forgiveness</h3>
+<p dir="rtl">رَبِّ اغْفِرْ لِي وَارْحَمْنِي</p>
+</div>
+
+</div>
+ከዚያ <div id="home"> ከሚያበቃበት በኋላ ይህን ጨምር፦
+HTML
 <p style="padding:0 15px">
 Assalamu Alaikum 🤲
 </p>
@@ -242,13 +264,17 @@ Assalamu Alaikum 🤲
 <div class="card-title">Qur'an Audio</div>
 <div class="card-sub">Coming Soon</div>
 </div>
-
-
 <div class="card">
+<button onclick="document.getElementById('duaPage').style.display='block'; document.getElementById('home').style.display='none';">
 <span class="icon">🤲</span>
 <div class="card-title">Dua</div>
 <div class="card-sub">Daily Duas</div>
+</button>
 </div>
+<div id="duaPage" style="display:none;padding:18px">
+
+<button class="back"
+
 <div class="card">
 <span class="icon">📚</span>
 <div class="card-title">Hadith</div>
