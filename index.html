@@ -163,7 +163,58 @@ font-size:12px;
 </head>
 
 <body>
+<div id="duaPage" style="display:none;padding:18px">
 
+<button class="back" onclick="closeDua()">
+← Back
+</button>
+
+<h2>🤲 Daily Duas</h2>
+
+<div class="juz">
+<strong>🌅 Morning Dua</strong>
+<p dir="rtl">اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا</p>
+</div>
+
+<div class="juz">
+<strong>🌙 Before Sleeping</strong>
+<p dir="rtl">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</p>
+</div>
+
+<div class="juz">
+<strong>🍽️ Before Eating</strong>
+<p dir="rtl">بِسْمِ اللَّهِ</p>
+</div>
+
+<div class="juz">
+<strong>🤲 Forgiveness</strong>
+<p dir="rtl">رَبِّ اغْفِرْ لِي وَارْحَمْنِي</p>
+</div>
+
+<div class="juz">
+<strong>🕌 After Prayer</strong>
+<p dir="rtl">أَسْتَغْفِرُ اللَّهَ</p>
+</div>
+
+</div>
+
+<script>
+
+function openDua(){
+
+document.getElementById("home").style.display="none";
+document.getElementById("duaPage").style.display="block";
+
+}
+
+function closeDua(){
+
+document.getElementById("duaPage").style.display="none";
+document.getElementById("home").style.display="block";
+
+}
+
+</script>
 <header>
 <div class="logo">☪️</div>
 <h1>Ethio Muslim</h1>
@@ -192,12 +243,12 @@ Assalamu Alaikum 🤲
 <div class="card-sub">Coming Soon</div>
 </div>
 
+
 <div class="card">
 <span class="icon">🤲</span>
 <div class="card-title">Dua</div>
 <div class="card-sub">Daily Duas</div>
 </div>
-
 <div class="card">
 <span class="icon">📚</span>
 <div class="card-title">Hadith</div>
