@@ -167,10 +167,45 @@ h1{
   font-size:12px;
 }
 </style>
+.juz-content{
+  margin-top:12px;
+  padding:15px;
+  background:#061b24;
+  border:1px solid #185565;
+  border-radius:12px;
+  color:white;
+  display:none;
+}
+
+.juz-content.show{
+  display:block;
+}
+
 </head>
 
 <body>
+<script>
+function openJuz(juzNumber){
 
+  // ሁሉንም የJuz content ዝጋ
+  document.querySelectorAll(".juz-content").forEach(function(el){
+    el.classList.remove("show");
+  });
+
+  // የተነካውን Juz ክፈት
+  const box = document.getElementById("juz-content-" + juzNumber);
+
+  if(box){
+    box.classList.add("show");
+  }
+
+  // Juz 1 ከሆነ ቁርአኑን አሳይ
+  if(juzNumber === 1 && typeof showPage === "function"){
+    currentPage = 0;
+    showPage();
+  }
+}
+</script>
 <header>
   <div class="logo">☪️</div>
   <h1>Ethio Muslim</h1>
